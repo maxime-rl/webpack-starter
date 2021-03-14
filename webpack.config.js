@@ -5,9 +5,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
   entry: {
-    main: path.join(__dirname, "src/index.js"),
-    page1: path.join(__dirname, "src/pages/page-1/page-1.js"),
-    navbar: path.join(__dirname, "src/assets/scripts/navbar.js")
+    main: path.join(__dirname, "src/js/index.js")
   },
   output: {
     path: path.join(__dirname, "dist"),
@@ -38,13 +36,11 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       filename: "index.html",
-      template: path.join(__dirname, "./src/index.html"),
-      chunks: ["main", "navbar"]
+      template: path.join(__dirname, "./src/html/index.html"),
     }),
     new HtmlWebpackPlugin({
       filename: "page-1.html",
-      template: path.join(__dirname, "./src/pages/page-1/page-1.html"),
-      chunks: ["page1", "navbar"]
+      template: path.join(__dirname, "./src/html/page-1.html"),
     })
   ],
   stats: "minimal",
